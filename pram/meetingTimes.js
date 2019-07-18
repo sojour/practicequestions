@@ -27,3 +27,28 @@ function meetingPlanner(slotsA, slotsB, dur) {
 function duration(arr, dur) {
   return arr[1] - arr[0] >= dur
 }
+
+
+// Refactoring
+
+function meetingPlanner(slotsA, slotsB, dur) {
+  let aIdx = 0;
+  let bIdx = 0;
+
+  while (aIdx < slotsA.length && bIdx < slotsB.length) {
+    let start = Math.max(slotsA[aIdx][0], slotsB[bIdx][0])
+    let end = Math.min(slotsA[aIdx][1], slotsB[bIdx][1])
+
+    if (start + dur <= end) {
+      return [start, start + dur]
+    }
+    else {
+      if (slotsA[aIdx][1] >= slotsB[bIdx][1]) {
+        bIdx++
+      } else {
+        aIdx++
+      }
+    }
+  }
+  return [];
+}
