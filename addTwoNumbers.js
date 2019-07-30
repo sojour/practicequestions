@@ -35,3 +35,6 @@ let l2 = { val: 3, next: { val: 2, next: { val: 1, next: null } } }
 
 
 addTwoNumbers(l1, l2)
+
+
+let e1 = ['h','i',' ','y','o','u']
