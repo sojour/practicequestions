@@ -47,7 +47,7 @@ var decodeString = function (s) {
   let opened = 0;
 
   for (let i = 0; i < s.length; i++) {
-    let chr = s.substr(i, 1);
+    let chr = s[i];
     if (opened >= 1) subString += chr;
     if (chr == "[") opened++;
     else if (chr == "]") {
