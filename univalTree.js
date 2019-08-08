@@ -9,6 +9,8 @@ function countUnival(root, result = { val: 0 }) {
   return result.val;
 }
 
+//takes into type coersion of JS where 1+true = 2
+
 function isUnival(root, val) {
   return root ? root.val === val && isUnival(root.left, val) && isUnival(root.right, val) : 1;
 }
