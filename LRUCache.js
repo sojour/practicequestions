@@ -18,6 +18,7 @@ class LRUCache {
     if (!value) {
       return -1;
     } else {
+
       return this.cache[key];
     }
   }
