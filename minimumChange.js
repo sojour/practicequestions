@@ -13,33 +13,34 @@ function minNumberOfCoinsForChange(n, denoms) {
   return ways[n] === Infinity ? -1 : ways[n]
 }
 
+
+
 function greedy(n, denoms) {
-  function minNumberOfCoinsForChange(n, denoms) {
-    // Write your code here.
-    let total = n;
-    let count = 0;
-    let iterator = 0;
-    if (n === 0) {
-      return 0;
-    }
+  // Write your code here.
+  let total = n;
+  let count = 0;
+  let iterator = 0;
+  if (n === 0) {
+    return 0;
+  }
 
-    denoms = denoms.sort((a, b) => { return b - a });
+  denoms = denoms.sort((a, b) => { return b - a });
 
-    while (total > 0 && iterator < denoms.length) {
-      console.log(denoms[iterator])
+  while (total > 0 && iterator < denoms.length) {
+    console.log(denoms[iterator])
 
-      if (denoms[iterator] <= total) {
-        total -= denoms[iterator];
-        count++;
-      } else {
-        iterator++;
-      }
-    }
-
-    if (total == 0) {
-      return count
+    if (denoms[iterator] <= total) {
+      total -= denoms[iterator];
+      count++;
     } else {
-      return -1;
+      iterator++;
     }
   }
+
+  if (total == 0) {
+    return count
+  } else {
+    return -1;
+  }
 }
+
