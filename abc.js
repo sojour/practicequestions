@@ -42,11 +42,11 @@ const abc = (A, B, C) => {
 
     }
   }
-  console.log(result.length)
+  // console.log(result.length)
   return result
 }
 
 
 console.log(abc(0, 0, 0));
-console.log(abc(10, 5, 1))
+console.log(abc(10, 6, 1))
 
