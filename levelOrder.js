@@ -26,3 +26,33 @@ var levelOrder = function (root) {
   }
   return result
 };
+
+
+//n-ary tree
+var levelOrder = function (root) {
+  let result = [];
+
+  if (!root) {
+    return result;
+  }
+
+  let queue = [root]
+  let interQueue = [];
+
+  while (queue.length) {
+    let len = queue.length;
+
+    for (let j = 0; j < len; j++) {
+      let node = queue.shift();
+      interQueue.push(node.val)
+      for (let i = 0; i < node.children.length; i++) {
+        queue.push(node.children[i]);
+      }
+    }
+    result.push(interQueue);
+    interQueue = [];
+
+
+  }
+  return result;
+};
