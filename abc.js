@@ -48,5 +48,5 @@ const abc = (A, B, C) => {
 
 
 console.log(abc(0, 0, 0));
-console.log(abc(10, 6, 1))
+console.log(abc(1, 1, 1))
 
